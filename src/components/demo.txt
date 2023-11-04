@@ -1,0 +1,30 @@
+   {/* <div className="max-w-[370px] w-full min-h-[498px]  h-full p-6 bg-white flex flex-col bg-opacity-10 card ">
+            <div className="relative max-w-[335px] max-h-[322px] w-full h-full  ">
+              <Image
+                src="/Rectangle44.png"
+                alt="starwar"
+                height={0}
+                width={0}
+                layout="fill"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <div
+              className={`${audiowide.className} flex justify-between items-center pt-9 text-base w-[97%] uppercase font-medium`}
+            >
+              <span className="">Dartcat</span>
+              <span>#234T67</span>
+            </div>
+            <div
+              className={`${sarpanch.className} flex justify-between items-center pt-5 text-[#757575] text-sm w-[97%]  `}
+            >
+              <span>Current Bid</span>
+              <span>Ending in</span>
+            </div>
+            <div
+              className={`${sarpanch.className} flex justify-between items-center pt-1 mb-2 text-base w-[97%]`}
+            >
+              <span>5.54 ETH</span>
+              <span>21h 47m</span>
+            </div>
+          </div> */}

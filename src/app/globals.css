@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "clash";
+  src: url(../utils/fonts/clash/ClashDisplay-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "clash";
+  src: url(../utils/fonts/clash/ClashDisplay-Medium.ttf) format("truetype");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+::-webkit-scrollbar {
+  width: 0.1rem; /* Set a width for the scrollbar (adjust as needed) */
+}
+
+/* Hide scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Set the background color of the track */
+}
+
+/* Hide scrollbar thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Set the color of the thumb */
+}
+
+/* Hide scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent; /* Set the color of the thumb on hover */
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  /* z-index: 5; */
+}
+
+.main_container::before {
+  content: "";
+  position: absolute;
+  top: 10vh;
+  left: -23vh;
+  width: 116%;
+  height: 50%;
+  transform: rotate(-6deg);
+  background-image: url("../../public/landingdot.png");
+  background-size: cover;
+}
+
+.second_container::before {
+  content: "";
+  position: absolute;
+  top: 45vh;
+  left: -24vh;
+  width: 127%;
+  height: 100%;
+  transform: rotate(1deg);
+  background-image: url("../../public/seconddot.png");
+  background-size: cover;
+}
+
+.third_container::before {
+  content: "";
+  position: absolute;
+  top: -58vh;
+  left: 20vh;
+  width: 100%;
+  height: 130%;
+  transform: rotate(0deg);
+  background-image: url("../../public/thirdline.png");
+  background-size: cover;
+}
+
+.buttonBefore {
+  clip-path: polygon(
+    0% 0%,
+    90% 0%,
+    100% 30%,
+    100% 76%,
+    100% 100%,
+    10% 100%,
+    0% 70%,
+    0% 0
+  );
+}
+
+.threestep {
+  clip-path: polygon(
+    15% 0,
+    85% 0,
+    100% 15%,
+    100% 85%,
+    85% 100%,
+    15% 100%,
+    0 85%,
+    0 15%
+  );
+}
+
+.pink {
+  background: rgba(202, 117, 223, 0.3);
+  filter: blur(53.526729583740234px);
+}
+
+.card {
+  clip-path: polygon(
+    0% 0%,
+    89% 0%,
+    100% 9%,
+    100% 76%,
+    100% 100%,
+    10% 100%,
+    0% 100%,
+    0% 0
+  );
+}
+
+.updown {
+  animation: updown 4s ease-in-out infinite alternate;
+}
+
+.downup {
+  animation: downup 4s ease-in-out infinite alternate;
+}
+
+.bgColor {
+  animation: bgcolor 10s ease-in infinite alternate;
+}
+
+/* .moveCard:hover { */
+  /* transition: all ease 200ms; */
+  /* animation: rotateCard 2s ease-in-out ; */
+/* } */
+
+.moveCard {
+  transition: all ease 500ms;
+  animation: rotateCard 2s ease-in;
+
+  /* animation: rotateCard 2s ease-in; */
+}
+
+.dd {
+  filter: url("#filter");
+}
+
+.cc {
+  margin: auto;
+  background: linear-gradient(96deg, #9173d1 0%, #ec6ead 100%);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  filter: blur(1px) contrast(120%);
+  transition: 100ms;
+}
+
+.wave {
+  background-image: url("/7.png");
+  color: rgba(255, 255, 255, 0.1);
+  text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
+  animation: wave-animation 2s infinite linear,
+    loading-animation 2s infinite linear alternate;
+  background-size: 200px 100px;
+  background-repeat: repeat-x;
+  opacity: 1;
+}
+
+.card-rotate {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-rotate.enter {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+@keyframes loading-animation {
+  0% {
+    background-size: 200px 0px;
+  }
+  100% {
+    background-size: 200px 200px;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+
+@keyframes rotateCard {
+  0% {
+    transform: rotateY(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotateY(180deg);
+    scale: 0.8;
+  }
+  100% {
+    transform: rotateY(360deg);
+    scale: 1;
+  }
+}
+
+@keyframes bgcolor {
+  0% {
+    background-color: #634283;
+  }
+  25% {
+    background-color: #75569e;
+  }
+  50% {
+    background-color: rgba(158, 74, 226, 0.3);
+  }
+  100% {
+    background-color: #355a5a;
+  }
+}
+
+@keyframes updown {
+  0%,
+  100% {
+    transform: translateY(0) skewX(-10deg);
+  }
+  50% {
+    transform: translateY(5px) skewX(-10deg);
+  }
+}
+
+@keyframes downup {
+  0%,
+  100% {
+    transform: translateY(5px) skewX(-10deg);
+  }
+  50% {
+    transform: translateY(0px) skewX(-10deg);
+  }
+}
+
+/* .beforeborder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: drop-shadow(0px 0px 8px #9173d1);
+  width: 0;
+}
+
+.beforeborder::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 15px solid #1e1c51;
+  border-right: 15px solid #9173d1;
+  width: 0;
+} */
+
+/* {
+  content: "";
+  position: absolute;
+  top: 10vh;
+  left: -23vh;
+  width: 116%;
+  height: 50%;
+  transform: rotate(-6deg);
+  background-image: url(/_next/static/media/landingdot.6554ca7f.png);
+  background-size: cover;
+} */
+
+@media only screen and (max-width: 1280px) {
+  .main_container::before {
+    top: 10vh;
+    left: -11vh;
+    width: 164%;
+    height: 30%;
+  }
+
+  .second_container::before {
+    content: "";
+    position: absolute;
+    top: 87vh;
+    left: -23vh;
+    width: 173%;
+    height: 92%;
+  }
+
+  .third_container::before {
+    top: 51vh;
+    left: 9vh;
+    width: 141%;
+    height: 86%;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .main_container::before {
+    top: 10vh;
+    left: -11vh;
+    width: 234%;
+    height: 15%;
+  }
+}
+
+.gg::-webkit-scrollbar {
+  height: 7px;
+  width: 0.1rem; /* Set a width for the scrollbar (adjust as needed) */
+}
+
+/* Hide scrollbar track */
+.gg::-webkit-scrollbar-track {
+  background: transparent; /* Set the background color of the track */
+}
+
+/* Hide scrollbar thumb (the draggable part of the scrollbar) */
+.gg::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 20px;
+  opacity: 0.2;
+  border: 1px solid #1e1c51;
+}
+
+/* Hide scrollbar thumb on hover */
+.gg::-webkit-scrollbar-thumb:hover {
+  background: #1e1c51;
+  opacity: 0.2;
+  border: 1px solid white;
+}
